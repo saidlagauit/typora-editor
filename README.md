@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Typora-like Editor
+
+A modern, file-based Markdown editor built with Next.js and Tailwind CSS. It features a clean, distraction-free interface inspired by Typora, with support for split-view editing, live preview, and dark mode.
+
+## Features
+
+### 📝 Markdown Editing
+
+- **Split View**: Edit Markdown on the left and see a live preview on the right.
+- **Edit & Preview Modes**: Switch between full edit mode, full preview mode, or split view.
+- **Autosave**: Changes are automatically saved to the local file system as you type.
+- **Syntax Highlighting**: Rich Markdown rendering using `react-markdown` and `@tailwindcss/typography`.
+
+### 📂 File Management
+
+- **File Explorer**: Browse files and folders in a collapsible sidebar tree view.
+- **File Operations**:
+  - Create new files and folders.
+  - Delete files and folders.
+  - Move files (Drag & Drop support).
+- **Custom Modals**: Clean, accessible modal dialogs for all file operations (no native browser alerts).
+
+### 🎨 User Interface
+
+- **Monochrome Design**: A strict 3-color minimalist palette (Black, White, Gray) for a distraction-free writing environment.
+- **Dark & Light Mode**: Seamlessly switch between dark and light themes with consistent monochrome styling.
+- **RTL Support**: Automatic text direction detection for languages like Arabic.
+- **Responsive**: Adapts to different screen sizes.
+
+### 📤 Export & Download
+
+- **PDF Export**: Export your documents to professional PDF format.
+- **Markdown Download**: Download the raw `.md` file locally.
+
+## Tech Stack
+
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Markdown Rendering**: `react-markdown`
+- **Icons**: `lucide-react`
+- **State Management**: React Hooks & Context API
 
 ## Getting Started
 
-First, run the development server:
+1. **Clone the repository**:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   ```bash
+   git clone <repository-url>
+   cd typora-editor
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies**:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```bash
+   npm install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Run the development server**:
 
-## Learn More
+   ```bash
+   npm run dev
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+4. **Open the editor**:
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `content/`: **(Important)** This directory stores all the markdown files created and edited in the application.
+- `src/components/`:
+  - `Editor.tsx`: Main editing component with split-view logic.
+  - `FileTree.tsx`: Sidebar component for file navigation.
+  - `Modal.tsx`: Reusable modal component for UI interactions.
+  - `ThemeProvider.tsx`: Context provider for Dark/Light mode.
+- `src/lib/fs.ts`: Server-side file system utilities.
+- `src/app/api/`: API routes for file CRUD operations.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
