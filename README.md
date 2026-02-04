@@ -45,7 +45,7 @@ A modern, file-based Markdown editor built with Next.js and Tailwind CSS. It fea
 1. **Clone the repository**:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/saidlagauit/typora-editor.git
    cd typora-editor
    ```
 
